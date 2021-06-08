@@ -16,7 +16,13 @@ jobs:
     - name: install packages
       run: |
         sudo apt update -qq
-        sudo apt install -y gcc-10 make
+        sudo apt install -y gcc-10 autotools-dev
+
+    - name: autoconfigure    
+      run: autoreconf --install
+
+    -name: configure
+      run: ./configure
 
     - name: build application
       run: make -k
