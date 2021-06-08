@@ -12,5 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+    - name: install packages
+      run: |
+        sudo apt update -qq
+	sudo apt install -y gcc-10 make
+    
     - name: build application
-      run: make build
+      run: make -k
