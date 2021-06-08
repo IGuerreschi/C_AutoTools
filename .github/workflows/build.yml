@@ -17,6 +17,6 @@ jobs:
       run: |
         sudo apt update -qq
 	sudo apt install -y gcc-10 make
-    
+	
     - name: build application
       run: make -k
